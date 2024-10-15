@@ -1,7 +1,5 @@
-import { ArrowLeftIcon, ArrowRightIcon, ArrowRightLeft } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
-import Button from '../utils/Button';
+import { Button, settings, useScreenSize } from '../utils';
 
 const images = [
     { id: 1, name: 'Fitness Zone', src: '/Fitness Zone.webp' },
@@ -14,72 +12,25 @@ const images = [
 ];
 
 const Amenities = () => {
-    const sliderRef = useRef(null);
-    const [screenSize, setScreenSize] = useState(window.innerWidth);
-
-    const handleResize = () => {
-        setScreenSize(window.innerWidth);
-    };
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const handleNext = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickNext();
-        }
-    };
-
-    const handlePrev = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickPrev();
-        }
-    };
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: screenSize < 800 ? 1 : 3, // Number of slides to show
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-    };
+    const { slidesShow } = useScreenSize();
 
     return (
-        <div className='m-2 bg-pink-100 p-4'>
-            <h2 className='text-primary font-bold text-3xl text-center py-5 underline'>
-                Luxurious Amenities
-            </h2>
-            <div className='relative p-5'>
-                <Slider {...settings} ref={sliderRef}>
+        <div className='py-5'>
+            <h2 className='section-title'>Luxurious Amenities</h2>
+            <div className='p-5'>
+                <Slider {...settings} slidesToShow={slidesShow}>
                     {images &&
                         images.map((item) => (
-                            <div key={item.id} className='relative w-full pl-2'>
+                            <div key={item.id} className='relative w-full px-1'>
                                 <img
                                     src={item.src}
                                     alt={'Amenities_' + item.id}
                                     className='w-full'
                                 />
-                                <p className=' absolute bottom-5 left-5 py-2 px-5 rounded bg-gray-dark/80 text-white text-sm font-semibold'>
-                                    {item.name}
-                                </p>
+                                <p className='amenities_p'>{item.name}</p>
                             </div>
                         ))}
                 </Slider>
-                <button
-                    onClick={handlePrev}
-                    className='absolute scale-75 top-1/2 left-2 p-3 bg-black/70 hover:bg-black/90 text-white rounded-full'>
-                    <ArrowLeftIcon />
-                </button>
-                <button
-                    onClick={handleNext}
-                    className='absolute scale-75 top-1/2 right-2 p-3 bg-black/70 hover:bg-black/90 rounded-full text-white'>
-                    <ArrowRightIcon />
-                </button>
             </div>
             <Button name='request all Amenities' className=' mx-auto my-5' />
         </div>
