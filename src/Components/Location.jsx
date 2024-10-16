@@ -58,7 +58,9 @@ const Location = () => {
 
     return (
         <div className='p-5'>
-            <h2 className='section-title'>Location Advantage</h2>
+            <h2 className='section-title' id='connectivity'>
+                Location Advantage
+            </h2>
             <div className='sm:flex gap-5'>
                 <iframe
                     className='w-full lg:h-[30vw] h-[300px] mb-5'

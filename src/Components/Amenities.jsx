@@ -16,7 +16,9 @@ const Amenities = () => {
 
     return (
         <div className='py-5'>
-            <h2 className='section-title'>Luxurious Amenities</h2>
+            <h2 className='section-title' id='amenities'>
+                Luxurious Amenities
+            </h2>
             <div className='p-5'>
                 <Slider {...settings} slidesToShow={slidesShow}>
                     {images &&

@@ -4,7 +4,9 @@ import { Button } from '../utils';
 const Pricing = () => {
     return (
         <div className='sm:p-5 p-2 bg-gray-100'>
-            <h2 className='section-title'>Area Pricing</h2>
+            <h2 className='section-title' id='sc-price'>
+                Area Pricing
+            </h2>
             <table className='sm:table grid text-center text-lg w-full !border border-primary rounded-3xl overflow-hidden'>
                 <thead className='sm:table-header-group hidden'>
                     <tr className='text-xl text-white bg-secondary'>

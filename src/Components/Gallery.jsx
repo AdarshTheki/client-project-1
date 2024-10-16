@@ -15,7 +15,7 @@ const Gallery = () => {
     const { slidesShow } = useScreenSize();
 
     return (
-        <div className='p-5 bg-gray-300 pb-10'>
+        <div className='p-5 bg-gray-300 pb-10' id='gallery'>
             <h2 className='section-title'>Project Gallery</h2>
             <Slider {...settings} slidesToShow={slidesShow}>
                 {galleryImages.map((item) => (

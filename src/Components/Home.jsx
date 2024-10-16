@@ -11,7 +11,7 @@ const sliders = [
 const Home = () => {
     return (
         <div className='w-full overflow-hidden relative'>
-            <div className='pb-5 relative w-full overflow-hidden'>
+            <div className='pb-5 relative w-full overflow-hidden' id='top-section'>
                 <Slider {...settings} slidesToShow={1}>
                     {sliders.map((i) => (
                         <img
