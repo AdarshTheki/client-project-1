@@ -1,20 +1,11 @@
 import Button from './Button';
 import useScreenSize from './useScreenSize';
-
-// slider settings
-export const settings = {
-    infinite: true,
-    speed: 1000,
-    // slidesToShow: 1, // Number of slides to show
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-};
+import SliderImage from './SliderImage';
 
 export const data = [
     {
         id: 1,
-        image: '/designer.jfif',
+        image: '/post_designer.png',
         name: 'Website Design & Development',
         price: '₹15,000.00',
         descriptions:
@@ -41,7 +32,7 @@ export const data = [
     {
         id: 2,
         name: 'BPO Services',
-        image: '/bpo.jfif',
+        image: '/post_bpo.jpg',
         price: '₹12,000.00',
         descriptions:
             'We offer comprehensive Business Process Outsourcing (BPO) services designed to streamline your operations, reduce costs, and improve overall productivity. Our dedicated team of professionals is committed to delivering high-quality solutions that align with your business objectives and drive tangible results.',
@@ -67,7 +58,7 @@ export const data = [
     {
         id: 3,
         name: 'Android Development | Software Development',
-        image: '/developer.jfif',
+        image: '/post_web.png',
         price: '₹80,000.00',
         descriptions:
             'At heoweb, we specialize in developing innovative, user-friendly apps and software that not only meet your business needs but also exceed your expectations. Our team of skilled developers is dedicated to turning your ideas into reality and ensuring your digital solutions stand out in the market.',
@@ -92,4 +83,4 @@ export const data = [
     },
 ];
 
-export { Button, useScreenSize };
+export { Button, useScreenSize, SliderImage };

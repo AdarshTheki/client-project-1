@@ -1,18 +1,27 @@
 import { ArrowDownToLine } from 'lucide-react';
 import Slider from 'react-slick';
-import { Button, settings } from '../utils';
-
-const sliders = [
-    { id: 1, imageUrl: '/banner1.webp' },
-    { id: 2, imageUrl: '/banner2.webp' },
-    { id: 3, imageUrl: '/banner3.webp' },
-];
+import { Button } from '../utils';
 
 const Home = () => {
+    const sliders = [
+        { id: 1, imageUrl: '/banner1.webp' },
+        { id: 2, imageUrl: '/banner2.webp' },
+        { id: 3, imageUrl: '/banner3.webp' },
+    ];
+
+    const settings = {
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1, // Number of slides to show
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    };
+
     return (
         <div className='w-full overflow-hidden relative'>
             <div className='pb-5 relative w-full overflow-hidden' id='top-section'>
-                <Slider {...settings} slidesToShow={1}>
+                <Slider {...settings} >
                     {sliders.map((i) => (
                         <img
                             key={i.id}

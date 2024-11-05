@@ -15,13 +15,17 @@ const NavBar = () => {
                 <div className='lg:hidden w-full flex items-center justify-between py-2'>
                     <img src='/logo.png' alt='log_png' className='max-w-[200px] sm:max-w-[250px]' />
                     {open ? (
-                        <Button size='sm' className='bg-secondary' onClick={toggleHandler}>
+                        <button
+                            onClick={toggleHandler}
+                            className='p-2 hover:bg-gray-200 rounded-lg'>
                             <X size={20} />
-                        </Button>
+                        </button>
                     ) : (
-                        <Button size='sm' className='bg-secondary' onClick={toggleHandler}>
+                        <button
+                            onClick={toggleHandler}
+                            className='p-2 hover:bg-gray-200 rounded-lg'>
                             <Menu size={20} />
-                        </Button>
+                        </button>
                     )}
                 </div>
 
